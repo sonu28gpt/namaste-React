@@ -2,7 +2,7 @@ import React from "react";
 import  ReactDOM  from "react-dom/client";
 
 const heading=React.createElement('h1',{id:'heading'},'react hai apun');
-console.log(heading);//object i.e. react element
+// console.log(heading);//object i.e. react element
 const root=ReactDOM.createRoot(document.getElementById('root'));
 root.render(heading);
 
@@ -25,7 +25,7 @@ const Jsxel=()=>{
     return (
     <div id="container">
 
-        {Yuhi}
+       
     <h1 id="jsx" className="jsx" tabIndex="1" >
     jsx </h1>
     </div>
@@ -36,12 +36,13 @@ const yuhi1=(
     <div id="yuhi1">
 
     {Yuhi}
+    {<Jsxel/>}
     <Jsxel></Jsxel>
     {Jsxel()}
     <h1>yuhi1</h1>
     </div>
     
-)
+);
 
 console.log(yuhi1);
 root.render(yuhi1);
