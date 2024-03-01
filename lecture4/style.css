@@ -110,3 +110,8 @@
         overflow: hidden;
     text-overflow: ellipsis;
 }
+
+
+.filter-btn{
+margin: 10px;
+}

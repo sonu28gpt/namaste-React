@@ -18,6 +18,7 @@ const Card=(props)=>{
                     <h2>{cardObj?.info?.name}</h2>
                     <p className="card-text-rating">{cardObj?.info?.avgRating+"Star"}</p>
                     <p>{cardObj?.info?.cuisines.join(',')}</p>
+                    <p>{cardObj?.info?.costForTwo}</p>
                 </div>
 
             </div>
