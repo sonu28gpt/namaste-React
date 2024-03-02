@@ -35,6 +35,10 @@
     list-style: none;
     cursor: pointer;
 }
+.nav-items button{
+    cursor: pointer;
+    padding: 0px 10px;
+}
 
 #body{
     display: flex;
@@ -111,7 +115,23 @@
     text-overflow: ellipsis;
 }
 
+.filter{
+    display: flex;
+    margin: 10px;
+    justify-content: space-around;
+}
 
-.filter-btn{
-margin: 10px;
+
+.shimmer-container{
+    width: 80%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.shimmer-card{
+    width: 260px;
+    height: 400px;
+    background-color: rgb(226, 229, 232);
+    margin: 15px;
 }
