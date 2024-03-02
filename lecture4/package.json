@@ -7,8 +7,8 @@
     "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["swiggy","zomato"],
+  "author": "Sonu Gupta",
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.11.0",
