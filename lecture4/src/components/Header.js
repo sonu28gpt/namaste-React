@@ -21,7 +21,7 @@ const Header=()=>{
                     <Link to="/contact">    <li className="nav-item">Contact Us</li></Link>
                     <Link to="/grocery">    <li className="nav-item">Grocery</li></Link>
                     <Link to="">    <li className="nav-item">Cart</li></Link>
-                    {/* <Link to="/loginPage">    <li className="nav-item">log In</li></Link> */}
+                    <Link to="/loginPage">    <li className="nav-item">log In</li></Link>
                     <button className="log-btn" onClick={()=>{
 
                         (btnValue==='log In')?setbtnValue('log Out'):setbtnValue('log In');

@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
 import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
 
@@ -11,7 +11,7 @@ const MyTextInput = ({ label, ...props }) => {
   return (
     <>
       <label htmlFor={props.id || props.name}>{label}</label>
-      <input className="text-input" {...field} {...props} />
+      <input id={props.name} className="text-input" {...field} {...props} />
       {meta.touched && meta.error ? (
         <div className="error">{meta.error}</div>
       ) : null}
@@ -52,7 +52,7 @@ const MySelect = ({ label, ...props }) => {
 };
 
 // And now we can use these
-const SignupForm = () => {
+const LoginPage = () => {
   return (
     <>
       <h1>Subscribe!</h1>
@@ -61,8 +61,7 @@ const SignupForm = () => {
           firstName: '',
           lastName: '',
           email: '',
-          acceptedTerms: false, // added for our checkbox
-          jobType: '', // added for our select
+          password:'',
         }}
         validationSchema={Yup.object({
           firstName: Yup.string()
@@ -74,15 +73,7 @@ const SignupForm = () => {
           email: Yup.string()
             .email('Invalid email address')
             .required('Required'),
-          acceptedTerms: Yup.boolean()
-            .required('Required')
-            .oneOf([true], 'You must accept the terms and conditions.'),
-          jobType: Yup.string()
-            .oneOf(
-              ['designer', 'development', 'product', 'other'],
-              'Invalid Job Type'
-            )
-            .required('Required'),
+         password:Yup.string().required("password required")
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
@@ -98,7 +89,7 @@ const SignupForm = () => {
             type="text"
             placeholder="Jane"
           />
-
+ <br/>
           <MyTextInput
             label="Last Name"
             name="lastName"
@@ -106,24 +97,22 @@ const SignupForm = () => {
             placeholder="Doe"
           />
 
+          <br/>
           <MyTextInput
             label="Email Address"
             name="email"
             type="email"
             placeholder="jane@formik.com"
           />
+          <br/>
+          <MyTextInput
+            label="password"
+            name="password"
+            type="password"
+            placeholder="jane@formik.com"
+          />
 
-          <MySelect label="Job Type" name="jobType">
-            <option value="">Select a job type</option>
-            <option value="designer">Designer</option>
-            <option value="development">Developer</option>
-            <option value="product">Product Manager</option>
-            <option value="other">Other</option>
-          </MySelect>
-
-          <MyCheckbox name="acceptedTerms">
-            I accept the terms and conditions
-          </MyCheckbox>
+<br/>
 
           <button type="submit">Submit</button>
         </Form>
@@ -132,4 +121,4 @@ const SignupForm = () => {
   );
 };
 
-export default MyTextInput;
+export default LoginPage;

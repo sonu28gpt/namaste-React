@@ -8,7 +8,7 @@ import Error from './components/Error'
 import {createBrowserRouter,Outlet,RouterProvider} from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import useOnlineStatus from "./utils/useOnlineStatus";
-// import LoginPage from "./components/LoginPage";
+import LoginPage from "./components/LoginPage";
 
 const Grocery=lazy(()=>import('./components/Grocery'));
 
@@ -41,10 +41,10 @@ const appRouter=createBrowserRouter([
                 path:'/contact',
                 element:<Contact/>
             },
-            // {
-            //     path:'/loginPage',
-            //     element:<LoginPage/>
-            // },
+            {
+                path:'/loginPage',
+                element:<LoginPage/>
+            },
             {
                 path:'/grocery',
                 element:
