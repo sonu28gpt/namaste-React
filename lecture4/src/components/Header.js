@@ -9,20 +9,20 @@ const Header=()=>{
     const onlineStatus=useOnlineStatus();
 
     return(
-        <div id="header">
-            <div id="logo">
-                <img src={LOGO_URL}/>
+        <div id="header" className="flex justify-between items-center bg-pink-300 shadow-lg">
+            <div id="logo" className="">
+                <img  className="w-24" src={LOGO_URL}/>
             </div>
-            <div className="nav-items">
-                <ul>
+            <div className="mx-2 ">
+                <ul className="flex">
                     <li>Online Status:{onlineStatus?"✅":"🔴"}</li>
-                    <Link to="/">    <li className="nav-item">Home</li></Link>
-                    <Link to="/about">    <li className="nav-item">About Us</li></Link>
-                    <Link to="/contact">    <li className="nav-item">Contact Us</li></Link>
-                    <Link to="/grocery">    <li className="nav-item">Grocery</li></Link>
-                    <Link to="">    <li className="nav-item">Cart</li></Link>
-                    <Link to="/loginPage">    <li className="nav-item">log In</li></Link>
-                    <button className="log-btn" onClick={()=>{
+                    <Link to="/">    <li className="px-4">Home</li></Link>
+                    <Link to="/about">    <li className="px-4">About Us</li></Link>
+                    <Link to="/contact">    <li className="px-4">Contact Us</li></Link>
+                    <Link to="/grocery">    <li className="px-4">Grocery</li></Link>
+                    <Link to="">    <li className="px-4">Cart</li></Link>
+                    <Link to="/loginPage">    <li className="px-4">log In</li></Link>
+                    <button className="border-[2px] border-solid px-2 border-black" onClick={()=>{
 
                         (btnValue==='log In')?setbtnValue('log Out'):setbtnValue('log In');
                     }

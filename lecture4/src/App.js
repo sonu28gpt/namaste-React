@@ -12,13 +12,14 @@ import LoginPage from "./components/LoginPage";
 
 const Grocery=lazy(()=>import('./components/Grocery'));
 
+
 const AppLayout=()=>{
 
     const onlineStatus=useOnlineStatus();
     return (
         <div id="AppLayout">
             <Header/>
-            { onlineStatus?<Outlet/>:<h1>it seems you are offline,please connect to internet</h1> }
+            { onlineStatus?<Outlet/>:<h1 className="font-black text-lg">it seems you are offline,please connect to internet</h1> }
 
         </div>
     )

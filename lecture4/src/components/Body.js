@@ -27,7 +27,7 @@ const Body=()=>{
 
    if(resFilteredList.length===0){
     return(
-     <div id="body">
+     <div id="body " className="flex justify-center">
         <Shimmer/>
      </div>
         
@@ -36,16 +36,16 @@ const Body=()=>{
 
 
     return (
-        <div id="body">
-            <div id="body-container">
+        <div id="body" className="flex justify-center ">
+            <div id="body-container" className="w-[80%] ">
                 
-                <div className="filter">
+                <div className="flex justify-between h-14 items-center">
                     <div className="search">
-                        <input type="text" className="search-box" value={searchText}
+                        <input type="text" className= "ring-1 ring-inset ring-gray-300  italic" value={searchText}
                             onChange={(e)=>{
                                 setSearchText(e.target.value);}}
                         />
-                        <button className="search-btn" onClick={()=>{
+                        <button className="px-2 bg-pink-300 py-1 mx-1 rounded cursor-pointer hover:bg-pink-200" onClick={()=>{
                        
                            setFilteredResList(resList.filter((res)=>res?.info?.name.toLowerCase().includes(searchText.toLowerCase())));
                         }
@@ -55,19 +55,19 @@ const Body=()=>{
                         <button onClick={()=>{
                             setSearchText('');
                             setFilteredResList(resList);
-                        }}> &nbsp; All Restaurants &nbsp;</button>
+                        }} className="cursor-pointer px-2 bg-pink-300 py-1 mx-1 rounded hover:bg-pink-200"> &nbsp; All Restaurants &nbsp;</button>
                     </div>
-                    <button className="filter-btn" onClick={
+                    <button className="cursor-pointer px-2 bg-pink-300 py-1 mx-1 rounded hover:bg-pink-200" onClick={
                         ()=>   {
                             setFilteredResList(resList.filter((res)=>res?.info?.avgRating>4.3))
                             
                         }
                         } >Top Rated Restaurants</button>
                 </div>
-                <div id="all-card">
+                <div id="all-card" className="flex flex-wrap justify-evenly items-center">
                    {
                     resFilteredList.map((e)=>{
-                        return <Link key={e?.info?.id} to={'/restaurants/'+e?.info?.id}> <Card  cardObj={e}/> </Link>;
+                        return <Link className="inline-block" key={e?.info?.id} to={'/restaurants/'+e?.info?.id}> <Card  cardObj={e} /> </Link>;
                        
                     })
                    }

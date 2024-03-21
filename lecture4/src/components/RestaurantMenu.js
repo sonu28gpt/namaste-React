@@ -24,7 +24,7 @@ const RestaurantMenu=()=>{
                 <p>{resData[0]?.card?.card?.info?.avgRating+'Star'}</p>
                 <p>{resData[0]?.card?.card?.info?.costForTwoMessage}</p>
                 <hr/>
-                <button onClick={()=>{
+                <button className="px-2 bg-pink-300 py-1 mx-1 rounded cursor-pointer hover:bg-pink-200" onClick={()=>{
                     
                     veg?setveg(false):setveg(true);
                     // console.log(veg);
