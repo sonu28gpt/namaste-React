@@ -1,15 +1,16 @@
 
 import Card from "./Card";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { HOME_FETCH_LINK } from "../utils/constant";
-
+import UserContext from "../utils/UserContext.js";
 const Body=()=>{
 
     const [resList,setResList]=useState([]);
     const [resFilteredList,setFilteredResList]=useState([]);
     const [searchText,setSearchText]=useState('');
+    const {loggedInUser,setloggedUser}=useContext(UserContext);
 
     useEffect( ()=>{
         fetchData();
@@ -18,10 +19,10 @@ const Body=()=>{
     async function fetchData(){
     const data=await fetch(HOME_FETCH_LINK);
         const json=await data.json();
-        // console.log(json);
-        setResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      
+        setResList(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         
-        setFilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredResList(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
        
    }
 
@@ -63,6 +64,9 @@ const Body=()=>{
                             
                         }
                         } >Top Rated Restaurants</button>
+                    <input className="border-2 border-solid border-black" value={loggedInUser}  onChange={(e)=>{
+                        setloggedUser(e.target.value);
+                    }}/>
                 </div>
                 <div id="all-card" className="flex flex-wrap justify-evenly items-center">
                    {

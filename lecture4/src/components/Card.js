@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import { CLOUDINARY_URL } from "../utils/constant";
-
+import UserContext from '../utils/UserContext'
 
 const Card=(props)=>{
     const {cardObj}=props;
+    const {loggedInUser}=useContext(UserContext);
 
     return (
         <div className="w-[260px] h-[400px] m-[15px] flex justify-center items-center  ">
@@ -21,6 +23,7 @@ const Card=(props)=>{
                     <p className="truncate">{cardObj?.info?.avgRating+"Star"}</p>
                     <p className="truncate">{cardObj?.info?.cuisines.join(',')}</p>
                     <p>{cardObj?.info?.costForTwo}</p>
+                    <p>{loggedInUser}</p>
                 </div>
 
             </div>

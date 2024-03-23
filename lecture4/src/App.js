@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import  ReactDOM  from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -9,19 +9,28 @@ import {createBrowserRouter,Outlet,RouterProvider} from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import useOnlineStatus from "./utils/useOnlineStatus";
 import LoginPage from "./components/LoginPage";
+import UserContext from "./utils/UserContext.js";
 
 const Grocery=lazy(()=>import('./components/Grocery'));
 
 
 const AppLayout=()=>{
+    const[loggedUser,setloggedUser]=useState('app default');
 
     const onlineStatus=useOnlineStatus();
     return (
+        <UserContext.Provider value={{loggedInUser:loggedUser,setloggedUser}}>
+
+       
         <div id="AppLayout">
+          
+
             <Header/>
+           
             { onlineStatus?<Outlet/>:<h1 className="font-black text-lg">it seems you are offline,please connect to internet</h1> }
 
         </div>
+        </UserContext.Provider>
     )
 }
 
