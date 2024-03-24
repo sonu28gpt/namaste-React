@@ -23,7 +23,7 @@ const Card=(props)=>{
                     <p className="truncate">{cardObj?.info?.avgRating+"Star"}</p>
                     <p className="truncate">{cardObj?.info?.cuisines.join(',')}</p>
                     <p>{cardObj?.info?.costForTwo}</p>
-                    <p>{loggedInUser}</p>
+                    <p className="truncate">{loggedInUser}</p>
                 </div>
 
             </div>

@@ -19,10 +19,10 @@ const Body=()=>{
     async function fetchData(){
     const data=await fetch(HOME_FETCH_LINK);
         const json=await data.json();
-      
-        setResList(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        // console.log(json);
+        setResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         
-        setFilteredResList(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
        
    }
 
