@@ -16,12 +16,12 @@ const Cart=()=>{
                <h1 className=" font-bold text-xl">Cart</h1>
                <button className="p-1 my-2 border-[2px] border-solid border-black rounded-lg" onClick={handleClearCart}>clear cart</button>
             
-            <div className="content">
+            {/* <div className="content">
                 {    cartItems.map((e)=>{
                         return <ItemCard key={e?.id} data={e} cart={true}/>;
                         })
                 }
-            </div>
+            </div> */}
             </div>
         </div>
     )
