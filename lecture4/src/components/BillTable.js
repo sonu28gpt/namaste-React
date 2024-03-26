@@ -7,12 +7,16 @@ const BillTable=()=>{
     let totalPrice=0;
     return (
         <table className="border-2 border-solid border-black w-[100%] my-4">
+         <thead>
+
             <tr>
                 <th className="border-r-2 border-solid border-black">Item Name</th>
                 <th className="border-r-2 border-solid border-black">Quantity</th>
                 <th className="">Price</th>
             </tr>
-            
+         </thead>
+         <tbody>
+             
             {cartItems.map((e)=>{
                 const {Q}=e;
                 const {price,defaultPrice}=e?.data;
@@ -29,6 +33,7 @@ const BillTable=()=>{
                 <td className=" border-r-2 border-solid border-black"></td>
                 <td className="">₹{totalPrice}</td>
             </tr>
+         </tbody>
         </table>
     );
 }

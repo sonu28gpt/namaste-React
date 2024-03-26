@@ -24,6 +24,7 @@ const handleAdd=()=>{
 const  handleRemoveItem=()=>{
     dispatch(removeItem(data?.id));
 }
+   
     return (
         <div className="border-b-[1px] border-solid border-gray-400 py-4 flex justify-between">
             <div className="item-content w-[75%]">
@@ -31,12 +32,12 @@ const  handleRemoveItem=()=>{
                 <h1 className="font-medium text-lg">{name}</h1>
                 <h2>₹ {price?price/100:defaultPrice/100}</h2>
                 <p className="text-gray-500 text-xs py-1">{description}</p>
-               {/* { cart===true?<button className="p-2 rounded-lg border-[2px] border-solid my-1" onClick={handleRemoveItem}>remove item</button>:null} */}
-            </div>
+              </div>
 
 
             <div className="item-image w-[20%] h-[140px] relative">
-           {cart?<div className="w-[80%] p-2 bg-white text-pink-300 absolute bottom-1 left-4 shadow-md rounded-md  flex justify-around items-center" >
+           {cart?
+           <div className="w-[80%] p-2 bg-white text-pink-300 absolute bottom-1 left-4 shadow-md rounded-md  flex justify-around items-center" >
             <span className="cursor-pointer font-bold text-lg" onClick={handleRemoveItem}>-</span>
             <span>{cart?.Q}</span>
             <span className="cursor-pointer font-bold text-lg " onClick={handleAdd}>+</span>

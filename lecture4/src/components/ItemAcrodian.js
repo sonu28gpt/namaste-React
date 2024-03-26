@@ -1,18 +1,11 @@
-import { useState } from "./../../node_modules/react";
+
 import ItemCard from "./ItemCard";
 
 
 
 const ItemAcrodian=(props)=>{
     const data=props.data;
-    const {noheading,showContent,setshowContent,showContentValue}=props;
-    // const noheading=props?.noheading;
-    // console.log(noheading)
-    // console.log(data);
-    // const[showContent,setshowContent]=useState(false);
-    // const showContent=props?.showContent;
-    // const setshowContent=props?.setshowContent;
-    // const showContentValue=props?.showContentValue;
+    const {noheading,showContent,setshowContent,showContentValue,vegOnly}=props;
     const acrodianShow= ()=>{
         if(showContentValue===data?.title){
             setshowContent(null);
@@ -29,9 +22,22 @@ const ItemAcrodian=(props)=>{
                 <span>{showContent?"⬆":"⬇"}</span>
             </div>
             <div className="content">
-                {   showContent?  data.itemCards.map((e)=>{
-                        return <ItemCard key={e?.card?.info?.id} data={e?.card?.info}/>;
-                        }):null
+                {   showContent?
+                 vegOnly?
+                 data.itemCards.filter((e)=>{
+                    return e?.card?.info?.itemAttribute?.vegClassifier==='VEG'
+                    }).map((e)=>{
+                        return <ItemCard key={e?.card?.info?.id} data={e?.card?.info} menuPage={true}/>;
+                        })
+                        :data.itemCards.map((e)=>{
+                            {/* console.log(e); */}
+                        return <ItemCard key={e?.card?.info?.id} data={e?.card?.info} menuPage={true}/>;
+                        }) :
+                        null
+
+
+
+                    
                 }
             </div>
         </div>

@@ -3,6 +3,7 @@ import ItemAcrodian from "./ItemAcrodian";
 
 const CategoryAcrodian=(props)=>{
     const data=props.data;
+    const {vegOnly}=props;
     // console.log(data);
     const setshowContent=props?.setshowContent;
     const showContent=props?.showContent;
@@ -13,7 +14,7 @@ const CategoryAcrodian=(props)=>{
                 data.categories.map((e)=>{
                    
                     return <ItemAcrodian key={e?.title} data={e}  noheading={true}
-                    showContent={(showContent===e?.title)?true:false} setshowContent={setshowContent} showContentValue={showContent} />;
+                    showContent={(showContent===e?.title)?true:false} setshowContent={setshowContent} showContentValue={showContent} vegOnly={vegOnly}/>;
                 })
             }
         </div>
