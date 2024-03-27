@@ -4,6 +4,7 @@ import UserContext from '../utils/UserContext'
 
 const Card=(props)=>{
     const {cardObj}=props;
+    // console.log(cardObj);
     const {loggedInUser}=useContext(UserContext);
 
     return (
