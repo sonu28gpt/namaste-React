@@ -8,7 +8,7 @@ const Card=(props)=>{
     const {loggedInUser}=useContext(UserContext);
 
     return (
-        <div className="w-[260px] h-[400px] m-[15px] flex justify-center items-center  ">
+        <div data-testid="card" className="w-[260px] h-[400px] m-[15px] flex justify-center items-center  ">
             <div className="w-[100%] h-[100%] flex flex-col justify-around bg-[#f0f0f0] cursor-pointer p-[10px] hover:shadow-lg">
                 <div className="self-center relative w-[95%] h-[60%] ">
 

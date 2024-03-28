@@ -1,6 +1,6 @@
 
 
-const cardMock={
+{
     "info": {
         "id": "28805",
         "name": "Domino's Pizza",
@@ -71,5 +71,4 @@ const cardMock={
         "type": "WEBLINK"
     },
     "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
-};
-export default cardMock;
+}
